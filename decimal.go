@@ -99,7 +99,7 @@ func (z *Decimal) Shift(x *Decimal, shift int) *Decimal {
 	case shift > 0:
 		return z.MulInt(x, pow10(shift))
 	case shift < 0:
-		return z.DivInt(x, pow10(shift))
+		return z.DivInt(x, pow10(-shift))
 	default:
 		panic("unreachable")
 	}
